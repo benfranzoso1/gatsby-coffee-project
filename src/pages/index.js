@@ -13,7 +13,11 @@ const IndexPage = ({ data }) => (
       title="Ben's Coffee Shop"
       styleClass="default-background"
     />
-    <Info text="hello world" ctalink="/about/" ctatext="About Page" />
+    <Info
+      text="Ben's Coffee uses the best beans in all of the Southern Hemishpere "
+      ctalink="/about/"
+      ctatext="About Page"
+    />
   </Layout>
 )
 
