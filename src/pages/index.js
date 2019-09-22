@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => (
       styleClass="default-background"
     />
     <Info
-      text="Ben's Coffee uses the best beans in all of the Southern Hemishpere "
+      text="Ben's Coffee uses the best beans in all of the Southern Hemishpere"
       ctalink="/about/"
       ctatext="About Page"
     />
