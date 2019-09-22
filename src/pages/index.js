@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import BackgroundSection from "../components/Globals/BackgroundSection"
+import Info from "../components/Home/info"
 
 const IndexPage = ({ data }) => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = ({ data }) => (
       title="Ben's Coffee Shop"
       styleClass="default-background"
     />
+    <Info text="hello world" ctalink="/about/" ctatext="About Page" />
   </Layout>
 )
 
