@@ -7,11 +7,11 @@ import Info from "../components/Home/Info"
 
 const AboutPage = ({ data }) => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="About" />
     <BackgroundSection
       img={data.img.childImageSharp.fluid}
       title="About Ben's"
-      styleClass="default-background"
+      styleClass="about-background"
     />
     <Info
       text="Ben's Coffee uses the best beans in all of the Southern Hemishpere"

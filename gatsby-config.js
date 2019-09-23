@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Regular Joe's`,
@@ -11,6 +15,15 @@ module.exports = {
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: "hk7xs3vvire8",
+        // Learn about environment variables: https://gatsby.app/env-vars
+        accessToken: "lnOZ_0lbL2Q7pM6YEW2J0y6YNhE6vnF1krGoRnsBByc",
+        downloadLocal: true,
       },
     },
     `gatsby-transformer-sharp`,
