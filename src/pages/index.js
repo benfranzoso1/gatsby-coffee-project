@@ -15,6 +15,7 @@ const IndexPage = ({ data }) => (
     />
     <Info
       text="Ben's Coffee uses the best beans in all of the Southern Hemishpere"
+      title="Our Story"
       ctalink="/about/"
       ctatext="About Page"
     />
