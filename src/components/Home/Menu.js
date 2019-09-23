@@ -1,14 +1,41 @@
 import React, { Component } from "react"
 import Img from "gatsby-image"
 
+// Get catergories and filter them down
+const getCatergories = items => {
+  let tempItems = items.map(items => {
+    return items.node.category
+  })
+  let tempCategories = new Set(tempItems)
+  let categories = Array.from(tempCategories)
+  categories = ["all", ...categories]
+  return categories
+}
+
 export default class Menu extends Component {
   constructor(props) {
     super(props)
     this.state = {
       items: props.items.edges,
       coffeeItems: props.items.edges,
+      catergoires: getCatergories(props.items.edges),
     }
   }
+
+  handleItmes = category => {
+    let tempItems = [...this.state.items]
+    if (category === "all") {
+      this.setState(() => {
+        return { coffeeItems: tempItems }
+      })
+    } else {
+      let items = tempItems.filter(({ node }) => node.category === category)
+      this.setState(() => {
+        return { coffeeItems: items }
+      })
+    }
+  }
+
   render() {
     if (this.state.items.length > 0) {
       return (
@@ -22,6 +49,24 @@ export default class Menu extends Component {
               </div>
             </div>
             {/* catergoires */}
+            <div className="row mb-5">
+              <div className="col-10 mx-auto text-center">
+                {this.state.catergoires.map((category, index) => {
+                  return (
+                    <button
+                      type="button"
+                      key={index}
+                      className="btn btn-yellow text-capitalize m-3"
+                      onClick={() => {
+                        this.handleItmes(category)
+                      }}
+                    >
+                      {category}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
             {/* items */}
             <div className="row">
               {this.state.coffeeItems.map(({ node }) => {

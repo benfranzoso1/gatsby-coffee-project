@@ -27,7 +27,7 @@ export const query = graphql`
     img: file(relativePath: { eq: "bens.jpeg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_tracedSVG
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }

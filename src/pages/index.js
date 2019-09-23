@@ -29,7 +29,7 @@ export const query = graphql`
     img: file(relativePath: { eq: "default-bg.jpeg" }) {
       childImageSharp {
         fluid {
-          ...GatsbyImageSharpFluid_noBase64
+          ...GatsbyImageSharpFluid_withWebp_noBase64
         }
       }
     }
@@ -45,7 +45,7 @@ export const query = graphql`
           category
           image {
             fixed(width: 50, height: 50) {
-              ...GatsbyContentfulFixed_noBase64
+              ...GatsbyContentfulFixed_withWebp_noBase64
             }
           }
         }
